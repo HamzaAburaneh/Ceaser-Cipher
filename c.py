@@ -37,9 +37,9 @@ def main():
     key = int(input('Enter you key [1 - 26] or 0 for bruteforce: '))
     if(key == 0):
         print(bruteForce(message))
-        break;
-    choice = input('Encrypt or Decrypt? [E/D]: ')
-    if choice.lower().startswith('e'):
-        print(encrypt(message, key))
     else:
-        print(decrypt(message, key))
+        choice = input('Encrypt or Decrypt? [E/D]: ')
+        if choice.lower().startswith('e'):
+            print(encrypt(message, key))
+        else:
+            print(decrypt(message, key))
