@@ -26,26 +26,9 @@ def decrypt(message, key):
             decryptedResult += letter
     return decryptedResult
 
-def bruteforce(message):
-    for key in range(26):
-        plaintext = ""
-        for letter in message:
-            if letter in LETTERS:
-                num = LETTERS.find(letter)
-                num += key
-                if num > 26:
-                    num -= 26
-                plaintext += LETTERS[num]
-            else:
-                plaintext += letter
-        print(plaintext)
-
 def main():
     message = str(input('Enter your message: '))
-    key = int(input('Enter you key [1 - 26] or 0 for bruteforce: '))
-    if key == 0:
-        print(bruteforce(message))
-        return
+    key = int(input('Enter you key [1 - 26]: '))
     choice = input('Encrypt or Decrypt? [E/D]: ')
     if choice.lower().startswith('e'):
         print(encrypt(message, key))
