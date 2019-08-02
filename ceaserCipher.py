@@ -6,6 +6,8 @@ def encrypt(message, key):
         if letter in LETTERS:
             num = LETTERS.find(letter)
             num += key
+            if num > 26:
+                num -= 26
             encryptedResult +=  LETTERS[num]
         else:
             encryptedResult += letter
@@ -17,6 +19,8 @@ def decrypt(message, key):
         if letter in LETTERS:
             num = LETTERS.find(letter)
             num -= key
+            if num > 26:
+                num -= 26
             decryptedResult +=  LETTERS[num]
         else:
             decryptedResult += letter
@@ -29,6 +33,8 @@ def bruteforce(message):
             if letter in LETTERS:
                 num = LETTERS.find(letter)
                 num += key
+                if num > 26:
+                    num -= 26
                 plaintext += LETTERS[num]
             else:
                 plaintext += letter
