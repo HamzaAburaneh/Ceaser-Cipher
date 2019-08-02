@@ -19,7 +19,7 @@ def decrypt(message, key):
             num -= key
             decryptedResult +=  LETTERS[num]
         else:
-            decryptedResult += symbol
+            decryptedResult += letter
     return decryptedResult
 
 def bruteforce(message):
@@ -29,7 +29,9 @@ def bruteforce(message):
             if letter in LETTERS:
                 num = LETTERS.find(letter)
                 num += key
-                plaintext +=  LETTERS[num]
+                plaintext += LETTERS[num]
+            else:
+                plaintext += letter
         print(plaintext)
 
 def main():
@@ -43,3 +45,5 @@ def main():
         print(encrypt(message, key))
     else:
         print(decrypt(message, key))
+
+main()
