@@ -1,5 +1,5 @@
 LETTERS = 'abcdefghijklmnopqrstuvwxyz'
-
+#add more or make a web app in js with multiple cyphers
 def encrypt(message, key):
     encryptedResult = ""
     for letter in message:
